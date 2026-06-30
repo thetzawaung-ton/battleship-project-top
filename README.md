@@ -1,1 +1,1 @@
-#Webpack template
+#Battleship project exercise from The Odin Project
