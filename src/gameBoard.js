@@ -107,7 +107,7 @@ export class Gameboard {
   placeRandomShip(ship) {
     const row = Math.floor(Math.random() * 10);
     const column = Math.floor(Math.random() * 10);
-    const direction = Math.random > 0.5 ? "horizontal" : "vertical";
+    const direction = Math.random() > 0.5 ? "horizontal" : "vertical";
     this.addShip(row, column, ship, direction);
   }
   retryTillSuccess(callback) {
@@ -126,5 +126,21 @@ export class Gameboard {
     this.retryTillSuccess(() => this.placeRandomShip(new Ship(3)));
     this.retryTillSuccess(() => this.placeRandomShip(new Ship(2)));
     this.retryTillSuccess(() => this.placeRandomShip(new Ship(2)));
+  }
+  getIndexWithShips() {
+    const array = [];
+    for(let i = 0; i < 10; i++) {
+      for(let j = 0; j < 10; j++) {
+        if(this.#gameboard[i][j].hasShip) {
+          array.push(`${i}${j}`);
+        }
+      }
+    }
+    return array;
+  }
+  resetGameboard() {
+    this.#gameboard = this.#createBoard();
+    this.#placedShips = 0;
+    this.#destroyedShips = 0;
   }
 }
