@@ -17,9 +17,11 @@
           <div class="computer-board disable-button-click"></div>
         </div>
       </div>
-      <button class="place-ships">Place Random Ships</button>
-      <button class="start-game">Start Game</button>
-      <button class="restart-game">Restart Game</button>
+      <div class="button-container">
+        <button class="place-ships">Place Ships</button>
+        <button class="start-game">Start Game</button>
+        <button class="restart-game">Restart Game</button>
+      </div>
       <dialog class="alert-dialog">
         <div class="alert-container">
           <p class="alert-message"></p>
@@ -29,8 +31,10 @@
       <dialog class="winner-dialog">
         <div class="winner-container">
           <p class="winner-message"></p>
-          <button class="new-game">Start New Game</button>
-          <button class="hide-button">No</button>
+          <div class="dialog-button-group">
+            <button class="new-game">Start New Game</button>
+            <button class="hide-button">No</button>
+          </div>
         </div>
       </dialog>
     </div>

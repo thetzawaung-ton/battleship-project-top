@@ -75,12 +75,26 @@ h6 {
 }
 
 body {
-  background-color: cyan;
+  background-color: #cbbd93;
+  padding: 1rem;
 }
 
 .board {
   display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
   gap: 2rem;
+}
+
+.board h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: white;
 }
 
 .player-board,
@@ -88,11 +102,12 @@ body {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 1px;
-  height: 500px;
-  width: 500px;
+  height: 450px;
+  width: 450px;
 }
 .cell {
   background-color: #000080;
+  border-radius: 5%;
 }
 
 div[board="ship"] {
@@ -110,12 +125,10 @@ div[board="hit"] {
 }
 
 dialog {
-  margin: auto;
-  padding: 1rem;
-  background-color: #848884;
-  border: 1px solid #848884;
+  padding: 2rem;
+  background-color: #cbbd93;
+  border: 1px solid #cbbd93;
   border-radius: 1rem;
-  color: white;
 }
 
 .alert-container button {
@@ -124,4 +137,29 @@ dialog {
 
 .hide-button {
   display: none;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #202a44;
+  border: 1px solid #202a44;
+  border-radius: 30%;
+  color: white;
+}
+
+dialog p {
+  font-size: large;
+  margin-bottom: 1rem;
+  color: #333333;
+  color-scheme: light only;
+}
+
+.dialog-button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.winner-dialog::backdrop {
+  background-color: rgba(203, 189, 147, 0.4);
+  backdrop-filter: blur(5px);
 }
